@@ -12,6 +12,8 @@ body {
   font-family: sans-serif;
 }
 
+
+
 .header {
   display: flex;
   align-items: center;
@@ -118,5 +120,15 @@ body {
 
 .hour-row > td {
   padding: 0.25rem;
+}
+
+@media screen {
+  body {
+    display: inline;
+    width: 50%;
+  }
+  .day-section {
+    grid-template-columns: repeat(5, 75px);
+  }
 }
 

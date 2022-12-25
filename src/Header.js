@@ -5,6 +5,7 @@ const Header = ({ headerInfo, wmoCodes }) => {
   if (headerInfo) {
 
     return (
+    <>
       <header className="header">
         <div className="header-left">
           <img className="weather-icon large" src={wmoCodes[headerInfo.wmoCode]} alt="" data-current-icon />
@@ -38,7 +39,10 @@ const Header = ({ headerInfo, wmoCodes }) => {
             <div><span data-current-precip>{headerInfo.precip}</span><span className="value-sub-info">in</span></div>
           </div>
         </div>
+        
       </header>
+      <div style={{fontWeight:'bold'}}>Valdosta, GA</div>
+      </>
     )
   }
 }

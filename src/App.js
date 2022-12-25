@@ -76,7 +76,9 @@ function App() {
   }
   weekEnd = yyyy + '-' + mm + '-' + dd;
 
-  let dailyUrl = `https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&timezone=America%2FNew_York&daily=temperature_2m_max,temperature_2m_min,weathercode&temperature_unit=fahrenheit&windspeed_unit=mph&precipitation_unit=inch&start_date=${weekStart}&end_date=${weekEnd}`;
+  let lat = "30.832703";
+  let long = "-83.278488";
+  let dailyUrl = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&timezone=America%2FNew_York&daily=temperature_2m_max,temperature_2m_min,weathercode&temperature_unit=fahrenheit&windspeed_unit=mph&precipitation_unit=inch&start_date=${weekStart}&end_date=${weekEnd}`;
   let headerHourlyUrl = `https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m,weathercode,precipitation,apparent_temperature,windgusts_10m&daily=temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,precipitation_sum,windspeed_10m_max,weathercode&temperature_unit=fahrenheit&windspeed_unit=mph&precipitation_unit=inch&timezone=America%2FNew_York&start_date=${today}&end_date=${today}`;
 
   let [dayInfo, setDayInfo] = useState();
@@ -121,7 +123,7 @@ function App() {
         <tbody data-hour-section>
 
           {hourInfo.map(hour => {
-            return <Hour key={hour.id} hourInfo={hour} />
+            return <Hour key={hour.id} hourInfo={hour} icons={wmoCodes}/>
           })}
 
         </tbody>

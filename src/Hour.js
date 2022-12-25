@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Hour = ({hourInfo}) => {
+const Hour = ({hourInfo, icons}) => {
   let time = Number(hourInfo.time.split('').splice(11, 2).join(''));
   if (time > 12) {
     time = (time - 12) + ' PM';
@@ -19,30 +19,30 @@ const Hour = ({hourInfo}) => {
             </div>
           </td>
           <td>
-            <img src="icons/cloud-solid.svg" alt="" className="weather-icon" />
+            <img src={icons[hourInfo.wmoCodes]} alt="" className="weather-icon" />
           </td>
           <td>
             <div className="info-group">
               <div className="label">TEMP</div>
-              <div>31&deg;</div>
+              <div>{hourInfo.temp}&deg;</div>
             </div>
           </td>
           <td>
             <div className="info-group">
               <div className="label">FL TEMP</div>
-              <div>25&deg;</div>
+              <div>{hourInfo.flTemp}&deg;</div>
             </div>
           </td>
           <td>
             <div className="info-group">
               <div className="label">WIND</div>
-              <div>6<span className="value-sub-info">mph</span ></div>
+              <div>{hourInfo.wind}<span className="value-sub-info">mph</span ></div>
             </div>
           </td>
           <td>
             <div className="info-group">
               <div className="label">PRECIP</div>
-              <div>0<span className="value-sub-info">in</span></div>
+              <div>{hourInfo.precip}<span className="value-sub-info">in</span></div>
             </div>
           </td>
         </tr>
