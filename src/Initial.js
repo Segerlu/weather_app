@@ -2,7 +2,7 @@ import React from 'react'
 
 const Initial = () => {
   return (
-    <div> {/* Add ClassName blurred*/}
+    <div className='blurred'> {/* Add ClassName blurred*/}
         <header className="header">
       <div className="header-left">
         <img className="weather-icon large" src="./icons/sun-solid.svg" data-current-icon />
